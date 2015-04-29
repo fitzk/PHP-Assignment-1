@@ -7,4 +7,5 @@ no value is specified is undefined. If no key value pairs are passed it it shoul
 <?php
 ini_set('display_errors', 'On');
 echo date("Y-m-d H:i:s");
+echo hi
  ?>

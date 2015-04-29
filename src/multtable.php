@@ -26,10 +26,7 @@ If all of the above conditions are met, it should produce a multiplication table
 To accomplish the above task you will want to work with loops to dynamically
  create rows and within each row, loop to create the cells. It should output
  as a valid HTML5 document. -->
-
-
-
- <?php
-$response = http_get("http://web.engr.oregonstate.edu/~fitzsimk/PHP-Assignment-1/src/loopback.php", $min_multiplicand, $max_multiplicand,$min_multiplier,$max_multiplier);
+<?php
+$response = http_get("http://web.engr.oregonstate.edu/~fitzsimk/PHP-Assignment-1/src/multtable.php", $min_multiplicand, $max_multiplicand,$min_multiplier,$max_multiplier);
 print_r($min_multiplicand);
 ?>

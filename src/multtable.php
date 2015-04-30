@@ -84,15 +84,16 @@ if(ctype_digit($max_plier) != true){
 }
 
 
+if($min_cand > $max_cand){
+  echo "Minimum multiplicand larger than maximum."
+}
+if($min_plier > $max_plier){
+  echo "Minimum multiplier larger than maximum."
+}
 // It should check than the min is in fact less than or equal to the max
 //  multiplicand and multiplier respectively. If it is not, it should print the
 //   message "Minimum [multiplicand|multiplier] larger than maximum.".
 
-//  It should
-//   also check that the values returned are integers for each parameter. If it is
-//   not it should print 1 message for each invalid input
-//   "[min-multiplicand...max-multiplier]
-//   must be an integer.".
 
 
 ?>

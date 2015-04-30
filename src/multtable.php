@@ -28,72 +28,89 @@ To accomplish the above task you will want to work with loops to dynamically
  create rows and within each row, loop to create the cells. It should output
  as a valid HTML5 document. -->
 <?php
+//check parameters are
+function checkParams(){
 
-//check for empty parameter
-if(empty( $_GET['min-multiplicand'])||empty($_GET['max-multiplicand'])||empty($_GET['min-multiplier'])|| empty($_GET['max-multiplier']) ){
-  echo "Missing parameter ";
+  if(empty( $_GET['min-multiplicand'])||empty($_GET['max-multiplicand'])||empty($_GET['min-multiplier'])|| empty($_GET['max-multiplier']) ){
+    echo "Missing parameter ";
 
-  if(empty($_GET['min-multiplicand'])){
-    echo "min-multiplicand ";
+    if(empty($_GET['min-multiplicand'])){
+      echo "min-multiplicand ";
+    }
+
+    if(empty($_GET['max-multiplicand'])){
+      echo "max-multiplicand ";
+    }
+
+    if(empty($_GET['min-multiplier'])){
+      echo "min-multiplier ";
+    }
+
+    if(empty($_GET['max-multiplier'])){
+      echo "max-multiplier ";
+    }
+    return false;
   }
-
-  if(empty($_GET['max-multiplicand'])){
-    echo "max-multiplicand ";
-  }
-
-  if(empty($_GET['min-multiplier'])){
-    echo "min-multiplier ";
-  }
-
-  if(empty($_GET['max-multiplier'])){
-    echo "max-multiplier ";
-  }
+  return true;
 }
 
 
+//Check for integer
+function checkType(&$min_cand,&$max_cand,&$min_plier,&$max_plier){
+  $bool= true;
+  if(ctype_digit($min_cand) != true){
+    echo "Min-multiplicand must be an integer! ";
+    $bool = false;
+  }else{
+    $min_cand = (int)$min_cand;
+  }
+
+  if(ctype_digit($max_cand) != true){
+      echo "Max-multiplicand must be an integer!";
+    $bool = false;
+  }else{
+    $max_cand = (int)$max_cand;
+  }
+
+  if(ctype_digit($min_plier) != true){
+      echo "Min-multiplier must be an integer!";
+    $bool = false;    $bool = false;
+  }else{
+     $min_plier = (int)$min_plier;
+  }
+
+  if(ctype_digit($max_plier) != true){
+      echo "Max-multiplier must be an integer!";
+    $bool = false;
+  }else{
+       $max_plier = (int)$max_plier;
+  }
+  return $bool;
+}
+
+
+//checks min < max
+function checkMins($min_cand, $max_cand, $min_plier, $max_plier){
+  if($min_cand > $max_cand){
+    echo "Minimum multiplicand larger than maximum.";
+  }
+  if($min_plier > $max_plier){
+    echo "Minimum multiplier larger than maximum.";
+  }
+}
+
+$rCheckParams = checkParams();
 //assign to variables
 $min_cand = isset($_GET['min-multiplicand']) ? $_GET['min-multiplicand'] : ' ';
 $max_cand = isset($_GET['max-multiplicand']) ? $_GET['max-multiplicand'] : ' ';
 $min_plier = isset($_GET['min-multiplier']) ? $_GET['min-multiplier'] : ' ';
 $max_plier = isset($_GET['max-multiplier']) ? $_GET['max-multiplier'] : ' ';
 
-//Check for integer
-if(ctype_digit($min_cand) != true){
-//  $type = gettype($min_cand);
-  echo "Min-multiplicand must be an integer! ";
-}else{
-  $min_cand = (int)$min_cand;
+$rCheckType= checkType($min_cand, $max_cand, $min_plier, $max_plier);
+$rCheckMins= checkMins($min_cand, $max_cand, $min_plier, $max_plier);
+if($rCheckParams and $rCheckType and $rCheckMins){
+
+
+
 }
-
-if(ctype_digit($max_cand) != true){
-    echo "Max-multiplicand must be an integer!";
-}else{
-  $max_cand = (int)$max_cand;
-}
-
-if(ctype_digit($min_plier) != true){
-    echo "Min-multiplier must be an integer!";
-}else{
-   $min_plier = (int)$min_plier;
-}
-
-if(ctype_digit($max_plier) != true){
-    echo "Max-multiplier must be an integer!";
-}else{
-     $max_plier = (int)$max_plier;
-}
-
-
-if($min_cand > $max_cand){
-  echo "Minimum multiplicand larger than maximum."
-}
-if($min_plier > $max_plier){
-  echo "Minimum multiplier larger than maximum."
-}
-// It should check than the min is in fact less than or equal to the max
-//  multiplicand and multiplier respectively. If it is not, it should print the
-//   message "Minimum [multiplicand|multiplier] larger than maximum.".
-
-
-
 ?>

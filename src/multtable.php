@@ -91,12 +91,16 @@ function checkType(&$min_cand,&$max_cand,&$min_plier,&$max_plier){
 
 //checks min < max
 function checkMins($min_cand, $max_cand, $min_plier, $max_plier){
+  $bool = true;
   if($min_cand > $max_cand){
     echo "Minimum multiplicand larger than maximum.";
+    $bool = false;
   }
   if($min_plier > $max_plier){
     echo "Minimum multiplier larger than maximum.";
+    $bool = false;
   }
+  return $bool;
 }
 
 $rCheckParams = checkParams();
@@ -108,8 +112,19 @@ $max_plier = isset($_GET['max-multiplier']) ? $_GET['max-multiplier'] : ' ';
 
 $rCheckType= checkType($min_cand, $max_cand, $min_plier, $max_plier);
 $rCheckMins= checkMins($min_cand, $max_cand, $min_plier, $max_plier);
-if($rCheckParams and $rCheckType and $rCheckMins){
+echo $rCheckParams;
+echo $rCheckType;
+echo $rCheckMins;
+if($rCheckParams == true and $rCheckType == true and $rCheckMins == true){
 
+  echo "hello";
+  echo "<header></header>";
+  echo "<html>";
+  echo "<body>";
+  echo "<p> hello </p>";
+  echo "</body>";
+  echo "</html>";
+  //echo "<table><tr><td>first row</td></tr><tr></tr></table>";
 
 
 }

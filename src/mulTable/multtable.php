@@ -1,20 +1,4 @@
-<!-- This file should accept 4 parameters passed via the URL in a GET request.
-
-  - min-multiplicand
-  - max-multiplicand
-  - min-multiplier
-  - max-multiplier
-http://chrome-warrior-75-222926.usw1-2.nitrousbox.com/multtable.php?min-multiplicand=6&max-multiplicand=20&min-multiplier=1
-
-It should check than the min is in fact less than or equal to the max
- multiplicand and multiplier respectively. If it is not, it should print the
-  message "Minimum [multiplicand|multiplier] larger than maximum.". It should
-  also check that the values returned are integers for each parameter. If it is
-  not it should print 1 message for each invalid input
-  "[min-multiplicand...max-multiplier]
-  must be an integer.". It should check that all 4 parameters exist for each
-  missing parameter it should print "Missing parameter [min-multiplicand ...
-  max-multiplier].".
+<!--
 
 If all of the above conditions are met, it should produce a multiplication table
  that is (max-multiplicand - min-multiplicand + 2) tall and
@@ -27,6 +11,13 @@ If all of the above conditions are met, it should produce a multiplication table
 To accomplish the above task you will want to work with loops to dynamically
  create rows and within each row, loop to create the cells. It should output
  as a valid HTML5 document. -->
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="table.css">
+</head>
+<body>
+
 <?php
 //check parameters are
 function checkParams(){
@@ -112,20 +103,40 @@ $max_plier = isset($_GET['max-multiplier']) ? $_GET['max-multiplier'] : ' ';
 
 $rCheckType= checkType($min_cand, $max_cand, $min_plier, $max_plier);
 $rCheckMins= checkMins($min_cand, $max_cand, $min_plier, $max_plier);
-echo $rCheckParams;
-echo $rCheckType;
-echo $rCheckMins;
+
 if($rCheckParams == true and $rCheckType == true and $rCheckMins == true){
 
-  echo "hello";
-  echo "<header></header>";
-  echo "<html>";
-  echo "<body>";
-  echo "<p> hello </p>";
-  echo "</body>";
-  echo "</html>";
+
+  echo "<p> MULTIPLICATION TABLE </p>";
+  echo "<table>";
+
+  for($i = 0; $i < $max_cand - $min_cand + 2; $i = $i + 1){
+    echo "<tr>";
+
+    for($j = 0; $j < $max_plier - $min_plier + 2; $j= $j+1){
+
+      if($i == 0){
+        if($j==0){
+          echo "<td></td>";
+        }elseif($j > 0){
+          echo "<td>".$j."</td>";
+        }
+      }
+      else{
+        if($j == 0){
+          echo "<td>".$i."</td>";
+        }else{
+        echo "<td>".$j*$i."</td>";
+        }
+      }
+    }
+    echo "</tr>";
+  }
+  echo"</table>";
   //echo "<table><tr><td>first row</td></tr><tr></tr></table>";
 
 
 }
 ?>
+</body>
+</html>

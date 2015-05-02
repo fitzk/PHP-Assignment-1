@@ -8,7 +8,6 @@ no value is specified is undefined. If no key value pairs are passed it it shoul
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors','On');
-session_start();
 ?>
 
 <!DOCTYPE html>

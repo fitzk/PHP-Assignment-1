@@ -34,7 +34,7 @@ if(!isset($_SESSION['username'])){
   }
 }
 
-if(isset($_SESSION['username'] && $_SESSION['correct'] == true){
+if(isset($_SESSION['username']) && $_SESSION['correct'] == true){
   echo "<p>Hello $_SESSION[username] you have visited
   this page $_SESSION[visits] times before. Click ";
   echo '<a href="logout.php">here</a>';

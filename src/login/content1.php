@@ -2,33 +2,35 @@
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors','On');
+
 //code from lecture video
-  $_SESSION = array();
-  $filePath = explode('/', $_SERVER['PHP_SELF'],-1);
-  $filePath = implode('/',$filePath);
-  $redirect= "http://" . $_SERVER['HTTP_HOST'].$filePath;
+$filePath = explode('/', $_SERVER['PHP_SELF'],-1);
+$filePath = implode('/',$filePath);
+$redirect= "http://" . $_SERVER['HTTP_HOST'].$filePath;
 
 // if session is not set
-  if(!isset($_SESSION['username']) && !isset($_POST['username'])){
-    header("Location: {$redirect}/Login.php", true);
-    }
+if(!isset($_SESSION['username']) && !isset($_POST['username']) ){
+    header("Location: {$redirect}/login.php", true);
+}
 ?>
+
 <!DOCTYPE html>
 <html>
 <head><title>Login Results</title></head>
 <body>
 
 <?php
-
-if(empty($_POST["username"])){
-  echo "A username must be entered. Click ";
-  echo '<a href="login.php">here</a>';
-  echo" return to the login screen.";
-}else{
-  $_SESSION['username'] = $_POST["username"];
-  if(!isset($_SESSION['visits'])){
-    $_SESSION['visits']= 0;
-    $_SESSION['correct']= true;
+if(!isset($_SESSION['username'])){
+  if(empty($_POST["username"])){
+    echo "A username must be entered. Click ";
+    echo '<a href="login.php">here</a>';
+    echo" return to the login screen.";
+  }else{
+    $_SESSION['username'] = $_POST["username"];
+    if(!isset($_SESSION['visits'])){
+      $_SESSION['visits']= 0;
+      $_SESSION['correct']= true;
+    }
   }
 }
 

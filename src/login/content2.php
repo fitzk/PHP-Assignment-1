@@ -6,21 +6,18 @@ $filePath = explode('/', $_SERVER['PHP_SELF'],-1);
 $filePath = implode('/',$filePath);
 $redirect= "http://" . $_SERVER['HTTP_HOST'].$filePath;
 
-if($_SESSION['correct'] != true)){
+if(!isset($_SESSION['username'])){
   header("Location: {$redirect}/Login.php", true);
-  }
+}
 ?>
 <!Doctype html>
 <html>
   <head>
-    <title>Login Page</title>
+    <title>Content Two</title>
   </head>
 <body>
-  <?PHP
-
-
-  echo '<a href="content1.php">content1</a>';
-
+  <?php
+    echo '<a href="content1.php">content1</a>';
   ?>
 </body>
   </html>

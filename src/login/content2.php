@@ -15,7 +15,7 @@ session_start();
   $redirect= "http://" . $_SERVER['HTTP_HOST'].$filePath;
 
   if($_SESSION['correct'] != true){
-  header("Location: {$redirect}/Login.php", true);
+    header("Location: {$redirect}/Login.php", true);
   }else{
     echo '<a href="content1.php">content1</a>';
   }

@@ -1,5 +1,3 @@
-
-
 <?php
 session_start();
 error_reporting(E_ALL);
@@ -50,7 +48,6 @@ if(isset ( $_SESSION['username'] )){
     header("Location: {$redirect}/Login.php", true);
   }
 }
-
-  ?>
+?>
   <body>
 </html>

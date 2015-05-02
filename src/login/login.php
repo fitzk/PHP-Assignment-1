@@ -9,10 +9,9 @@ ini_set('display_errors','On');
     <title>Login Page</title>
   </head>
 <body>
-<form id="loginForm" method = "POST" action= "content1.php">
-<input type="text" name= "username">
-<input type="submit">
-</form>
-
+  <form id="loginForm" method = "POST" action= "content1.php">
+    <input type="text" name= "username">
+    <input type="submit">
+  </form>
 </body>
   </html>

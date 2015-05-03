@@ -14,7 +14,7 @@ To accomplish the above task you will want to work with loops to dynamically
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="table.css">
+  <link rel="stylesheet" type="text/css" href="./table.css">
 </head>
 <body>
 

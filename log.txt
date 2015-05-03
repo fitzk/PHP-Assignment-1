@@ -1,2 +1,31 @@
-12:59 PM
-started assignment
+~~~~~~~~~~~~~~~~~~~~ Log.txt  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Start:   Sat May 2 21:30:48 2015 -0700
+End:   Sat May 2 21:53:35 2015 -0700
+Tasks: changed request type to GET or POST instead of REQUEST
+    added inline css to multtable.php
+
+Start:   Fri May 1 11:30:24 2015 -0700
+End:   Fri May 1 21:39:01 2015 -0700
+Tasks: added some html to mult added to login and content from study
+session 2 hours 4/30. worked from 11:30am to 7:28PM completed
+all assignments. downloaded a wamp server for 30 min to run php
+locally. Worked on getting files to run on flip.moved redirect
+login to header.fixed index error on content 1.
+
+Start:   Thu Apr 30 12:50:00 2015 -0700
+End:   Thu Apr 30 13:13:20 2015 -0700
+Task:  Put code in functions tested function calls. Pre HTML.
+
+Start:   Thu Apr 30 10:40:00 2015 -0700
+End:     Thu Apr 30 11:44:02 2015 -0700
+Task: added error handling worked for one hour 10:40-11:40am,
+added min < max error handling real end 11:43am
+
+Start:   Wed Apr 29 14:20:00 2015 -0700
+End:   Wed Apr 29 14:52:01 2015 -0700
+Task: testing php variables, added correct url to http_Get function
+
+
+Start:   Wed Apr 29 12:36:00 2015 -0700
+End:   Wed Apr 29 14:06:40 2015 -0700
+Task: Added files to project.

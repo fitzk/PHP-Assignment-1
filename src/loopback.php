@@ -8,6 +8,7 @@ no value is specified is undefined. If no key value pairs are passed it it shoul
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors','On');
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +21,14 @@ ini_set('display_errors','On');
       "parameters"=>0
       ];
 //example from PHP manual
-
+$Type = $_SERVER['REQUEST_METHOD'];
 $thisArray['Type'] = $_SERVER['REQUEST_METHOD'];
-
-$thisArray['parameters']= $_REQUEST;
-
+if($Type == 'GET')
+{
+  $thisArray['parameters']= $_GET;
+}elseif($Type == "POST"){
+  $thisArray['parameters']= $_POST;
+}
 if($thisArray['parameters']==[]){
   $thisArray['parameters']= null;
 }else{

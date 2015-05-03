@@ -6,7 +6,7 @@ session_start();
 <!Doctype html>
 <html>
   <head>
-    <title>Login Page</title>
+    <title>Run Loop</title>
   </head>
 <body>
 <form id="loginForm" method = "POST" action= "loopback.php">

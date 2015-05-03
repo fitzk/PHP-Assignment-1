@@ -1,6 +1,8 @@
 table, tr, td {
 
-   border: 1px solid black;
+   border-style: 2px;
+   border-width: solid;
+   border-color: black;
    border-collapse: collapse;
    background-color: linen;
    padding: 5px;

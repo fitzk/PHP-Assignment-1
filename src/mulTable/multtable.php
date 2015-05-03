@@ -106,7 +106,13 @@ $rCheckMins= checkMins($min_cand, $max_cand, $min_plier, $max_plier);
 
 if($rCheckParams == true and $rCheckType == true and $rCheckMins == true){
 
-
+  echo "<style>
+  table, tr, td {
+   border: 1px solid black;
+   border-collapse: collapse;
+   background-color: linen;
+   padding: 5px;}
+  </style>"
   echo "<p> MULTIPLICATION TABLE </p>";
   echo "<table>";
 
